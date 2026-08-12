@@ -63,9 +63,28 @@ export default function SignInPage() {
 
   return (
     <div className="fixed inset-0 flex bg-black text-white">
-      {/* Left panel */}
+      {/* Left panel — grid background */}
       <div className="relative hidden w-1/2 flex-col items-center justify-center overflow-hidden bg-black p-16 lg:flex">
-        <div className="relative space-y-2 text-center">
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.15]"
+          viewBox="0 0 800 900"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g stroke="#ffffff" strokeWidth="1" fill="none">
+            <path d="M0 0 L800 300" />
+            <path d="M0 100 L700 900" />
+            <path d="M0 250 L800 100" />
+            <path d="M0 450 L800 650" />
+            <path d="M150 0 L0 500" />
+            <path d="M400 0 L200 900" />
+            <path d="M650 0 L500 900" />
+            <path d="M800 500 L300 900" />
+            <path d="M800 750 L550 0" />
+          </g>
+        </svg>
+
+        <div className="relative space-y-1">
           <h1 className="text-6xl font-black tracking-tight">
             Sign in to <span className="text-white">Name</span>
           </h1>
@@ -73,8 +92,8 @@ export default function SignInPage() {
         </div>
       </div>
 
-      {/* Right panel auth */}
-      <div className="flex w-full flex-col items-center justify-center px-8 py-16 lg:w-1/2 lg:px-20">
+      {/* Right panel — plain black, separated */}
+      <div className="flex w-full flex-col items-center justify-center bg-black px-8 py-16 lg:w-1/2 lg:px-20">
         <div className="mx-auto w-full max-w-md space-y-10">
           <div className="space-y-2">
             <h2 className="text-4xl font-black tracking-tight">Welcome back!</h2>
