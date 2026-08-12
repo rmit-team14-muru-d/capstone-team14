@@ -63,14 +63,15 @@ export default function SignInPage() {
 
   return (
     <div className="fixed inset-0 flex bg-black text-white">
-      {/* Left panel — grid background */}
-      <div className="relative hidden w-1/2 flex-col items-center justify-center overflow-hidden bg-black p-16 lg:flex">
+      {/* Left panel, + grid*/}
+      <div className="relative hidden w-2/3 flex-col items-center justify-center overflow-hidden bg-black p-16 lg:flex">
         <svg
           className="absolute inset-0 h-full w-full opacity-[0.15]"
           viewBox="0 0 800 900"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
+          {/* grid*/}
           <g stroke="#ffffff" strokeWidth="1" fill="none">
             <path d="M0 0 L800 300" />
             <path d="M0 100 L700 900" />
@@ -92,8 +93,8 @@ export default function SignInPage() {
         </div>
       </div>
 
-      {/* Right panel — plain black, separated */}
-      <div className="flex w-full flex-col items-center justify-center bg-black px-8 py-16 lg:w-1/2 lg:px-20">
+      {/* Right panel */}
+      <div className="flex w-full flex-col items-center justify-center bg-zinc-950 border-1 border-zinc-800 px-8 py-16 lg:w-1/3 lg:px-20">
         <div className="mx-auto w-full max-w-md space-y-10">
           <div className="space-y-2">
             <h2 className="text-4xl font-black tracking-tight">Welcome back!</h2>
