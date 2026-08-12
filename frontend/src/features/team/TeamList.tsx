@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Users, Trash2, X, AlertTriangle } from 'lucide-react'
+import { useState, useMemo } from 'react'
+import { Users, Trash2, AlertTriangle } from 'lucide-react'
 import { useCollection } from '@/hooks/useFirestore'
 import { getTeamMembersCollection } from '@/lib/firebase/firestore'
 import { useAuth } from '@/hooks/useAuth'
@@ -20,11 +20,14 @@ const ROLE_LABELS: Record<string, string> = {
 }
 
 export function TeamList() {
+  const teamRef = useMemo(() => getTeamMembersCollection(), [])
+  const constraints = useMemo(() => [where('_schemaVersion', '==', 1)], [])
+
   const {
     data: members,
     loading,
     error,
-  } = useCollection(getTeamMembersCollection(), where('_schemaVersion', '==', 1))
+  } = useCollection(teamRef, ...constraints)
   const { user } = useAuth()
   const [deleting, setDeleting] = useState(false)
   const [confirmTarget, setConfirmTarget] = useState<string | null>(null)

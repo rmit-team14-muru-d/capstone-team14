@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Plus, LogOut } from 'lucide-react'
 import { TeamList } from '@/features/team/TeamList'
 import { RegisterTeamMemberForm } from '@/features/team/RegisterTeamMemberForm'
@@ -8,7 +8,7 @@ import { useCollection } from '@/hooks/useFirestore'
 import { getTeamMembersCollection } from '@/lib/firebase/firestore'
 import { useAuth } from '@/hooks/useAuth'
 import { where } from 'firebase/firestore'
-import { useMemo } from 'react'
+import { FullPageSpinner } from '@/components/shared/LoadingSpinner'
 
 export default function TeamPage() {
   const memberRef = useMemo(() => getTeamMembersCollection(), [])
@@ -17,6 +17,8 @@ export default function TeamPage() {
   const { data: members } = useCollection(memberRef, ...constraints)
   const { user, signOut } = useAuth()
   const [showForm, setShowForm] = useState(false)
+
+  if (!user) return <FullPageSpinner />
 
   const hasJoined = members.some((m) => m.uid === user?.uid)
 
