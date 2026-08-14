@@ -86,15 +86,15 @@ export default function SignInPage() {
         </svg>
 
         <div className="relative space-y-1">
-          <h1 className="text-6xl font-black tracking-tight">
-            Sign in to <span className="text-white">Name</span>
+          <h1 className="text-5xl font-black tracking-tight">
+            Sign in to <span className="text-white">Telstra-muru-D — Team 2</span>
           </h1>
-          <p className="text-zinc-500">Project Description</p>
+          <p className="text-zinc-500">Agentic AI workflows for automated startup evaluation in Telstra&apos;s muru-D innovation lab</p>
         </div>
       </div>
 
       {/* Right panel */}
-      <div className="flex w-full flex-col items-center justify-center bg-zinc-950 border-1 border-zinc-800 px-8 py-16 lg:w-1/3 lg:px-20">
+      <div className="flex w-full flex-col items-center justify-center bg-zinc-950 border border-zinc-800 px-8 py-16 lg:w-1/3 lg:px-20">
         <div className="mx-auto w-full max-w-md space-y-10">
           <div className="space-y-2">
             <h2 className="text-4xl font-black tracking-tight">Welcome back!</h2>
