@@ -87,8 +87,8 @@ export default function SignInPage() {
 
         <div className="relative space-y-1">
           <h1 className="text-6xl font-black tracking-tight">
-            Sign in to <span className="text-white">Telstra-muru-D — Team 2</span>
-          </h1>
+            Sign in to <span className="text-white text-4xl">Telstra-muru-D — Team 2</span>
+            </h1>
           <p className="text-zinc-500">Agentic AI workflows for automated startup evaluation in Telstra's muru-D innovation lab</p>
         </div>
       </div>
