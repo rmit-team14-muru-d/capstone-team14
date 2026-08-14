@@ -24,5 +24,10 @@
   "devDependencies": {
     "lefthook": "^1.11.13",
     "next": "16.2.12"
+  },
+  "pnpm": {
+    "overrides": {
+      "nanoid": ">=3.3.18"
+    }
   }
 }
