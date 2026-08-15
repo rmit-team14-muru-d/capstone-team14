@@ -77,9 +77,8 @@ export function TeamList() {
             key={member.uid}
             className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950"
           >
-            <div className="relative h-40 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
+            <div className="relative h-56 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
               {member.photoURL && (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={member.photoURL}
                   alt={member.displayName ?? ''}

@@ -24,7 +24,7 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto max-w-4xl px-6 py-10">
+      <div className="mx-auto max-w-2xl px-6 py-10">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-black tracking-tight text-teal-400 sm:text-4xl">
             TELSTRA MURU-D
