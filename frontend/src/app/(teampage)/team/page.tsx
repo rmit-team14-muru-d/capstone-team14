@@ -23,39 +23,47 @@ export default function TeamPage() {
   const hasJoined = members.some((m) => m.uid === user?.uid)
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Team</h1>
-          <p className="mt-1 text-sm text-zinc-500">
-            {members.length} {members.length === 1 ? 'member' : 'members'}
+    <div className="min-h-screen bg-black text-white">
+      <div className="mx-auto max-w-5xl px-8 py-16">
+        <div className="mb-12 text-center">
+          <h1 className="text-5xl font-black tracking-tight text-teal-400 sm:text-6xl">
+            TELSTRA MURU-D
+          </h1>
+          <p className="mt-3 text-lg font-semibold text-zinc-400">
+            The Team behind the project
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          {!hasJoined && (
+
+        <div className="mb-8 flex items-center justify-between">
+          <p className="text-sm text-zinc-500">
+            {members.length} {members.length === 1 ? 'member' : 'members'}
+          </p>
+          <div className="flex items-center gap-3">
+            {!hasJoined && (
+              <button
+                type="button"
+                onClick={() => setShowForm(true)}
+                className="inline-flex items-center gap-2 rounded-md bg-teal-400 px-4 py-2 text-sm font-bold text-black transition-colors hover:bg-teal-300"
+              >
+                <Plus className="h-4 w-4" />
+                Join Team
+              </button>
+            )}
             <button
               type="button"
-              onClick={() => setShowForm(true)}
-              className="inline-flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              onClick={() => signOut()}
+              className="inline-flex items-center gap-2 rounded-md border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-400 transition-colors hover:bg-zinc-900"
             >
-              <Plus className="h-4 w-4" />
-              Join Team
+              <LogOut className="h-3.5 w-3.5" />
+              Log out
             </button>
-          )}
-          <button
-            type="button"
-            onClick={() => signOut()}
-            className="inline-flex items-center gap-2 rounded-md border border-zinc-300 px-3 py-1.5 text-xs font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
-          >
-            <LogOut className="h-3.5 w-3.5" />
-            Log out
-          </button>
+          </div>
         </div>
+
+        <TeamList />
+
+        {showForm && <RegisterTeamMemberForm onSuccess={() => setShowForm(false)} />}
       </div>
-
-      <TeamList />
-
-      {showForm && <RegisterTeamMemberForm onSuccess={() => setShowForm(false)} />}
     </div>
   )
 }

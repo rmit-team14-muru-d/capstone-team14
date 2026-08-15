@@ -98,7 +98,7 @@ export default function SignInPage() {
         <div className="mx-auto w-full max-w-md space-y-10">
           <div className="space-y-2">
             <h2 className="text-4xl font-black tracking-tight">Welcome back!</h2>
-            <p className="text-zinc-500">Sign in to access your workspace</p>
+            <p className="text-zinc-500">Sign in to access Teampage</p>
           </div>
 
           <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-8 shadow-2xl backdrop-blur">
@@ -114,8 +114,8 @@ export default function SignInPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Name</h3>
-                <p className="text-sm text-zinc-500">Sign in to your dashboard</p>
+                <h3 className="text-xl font-bold">Telstra-Muru-D</h3>
+                <p className="text-sm text-zinc-500">Sign in to Team 14's teampage</p>
               </div>
             </div>
 
