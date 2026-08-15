@@ -23,36 +23,36 @@ export default function TeamPage() {
   const hasJoined = members.some((m) => m.uid === user?.uid)
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-5xl px-8 py-16">
-        <div className="mb-12 text-center">
-          <h1 className="text-5xl font-black tracking-tight text-teal-400 sm:text-6xl">
+    <div className="min-h-screen w-full bg-black text-white">
+      <div className="mx-auto max-w-4xl px-6 py-10">
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-black tracking-tight text-teal-400 sm:text-4xl">
             TELSTRA MURU-D
           </h1>
-          <p className="mt-3 text-lg font-semibold text-zinc-400">
+          <p className="mt-2 text-sm font-semibold text-zinc-400">
             The Team behind the project
           </p>
         </div>
 
-        <div className="mb-8 flex items-center justify-between">
-          <p className="text-sm text-zinc-500">
+        <div className="mb-6 flex items-center justify-between">
+          <p className="text-xs text-zinc-500">
             {members.length} {members.length === 1 ? 'member' : 'members'}
           </p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {!hasJoined && (
               <button
                 type="button"
                 onClick={() => setShowForm(true)}
-                className="inline-flex items-center gap-2 rounded-md bg-teal-400 px-4 py-2 text-sm font-bold text-black transition-colors hover:bg-teal-300"
+                className="inline-flex items-center gap-1.5 rounded-md bg-teal-400 px-3 py-1.5 text-xs font-bold text-black transition-colors hover:bg-teal-300"
               >
-                <Plus className="h-4 w-4" />
+                <Plus className="h-3.5 w-3.5" />
                 Join Team
               </button>
             )}
             <button
               type="button"
               onClick={() => signOut()}
-              className="inline-flex items-center gap-2 rounded-md border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-400 transition-colors hover:bg-zinc-900"
+              className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 px-2.5 py-1.5 text-xs font-medium text-zinc-400 transition-colors hover:bg-zinc-900"
             >
               <LogOut className="h-3.5 w-3.5" />
               Log out

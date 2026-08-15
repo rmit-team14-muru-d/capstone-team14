@@ -63,8 +63,8 @@ export function TeamList() {
     setExpanded((prev) => ({ ...prev, [uid]: !prev[uid] }))
   }
 
-  return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    return (
+    <div className="grid gap-4 sm:grid-cols-2">
       {members.map((member) => {
         const isOwn = member.uid === user?.uid
         const isExpanded = expanded[member.uid]
@@ -75,10 +75,9 @@ export function TeamList() {
         return (
           <div
             key={member.uid}
-            className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950"
+            className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950"
           >
-            {/* Photo / gradient placeholder */}
-            <div className="relative h-64 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
+            <div className="relative h-40 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
               {member.photoURL && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -94,21 +93,21 @@ export function TeamList() {
                 type="button"
                 onClick={() => setConfirmTarget(member.uid)}
                 disabled={deleting}
-                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-md bg-black/40 text-white/80 backdrop-blur transition-colors hover:bg-red-600 hover:text-white disabled:opacity-50"
+                className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-md bg-black/40 text-white/80 backdrop-blur transition-colors hover:bg-red-600 hover:text-white disabled:opacity-50"
                 aria-label="Leave team"
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-3.5 w-3.5" />
               </button>
             )}
 
-            <div className="p-5">
+            <div className="p-4">
               {confirmTarget === member.uid ? (
-                <div className="flex flex-col items-center gap-3 py-2 text-center">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-950">
-                    <AlertTriangle className="h-5 w-5 text-red-400" />
+                <div className="flex flex-col items-center gap-2 py-1 text-center">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-950">
+                    <AlertTriangle className="h-4 w-4 text-red-400" />
                   </div>
-                  <p className="text-sm font-medium text-zinc-200">Leave the team?</p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs font-medium text-zinc-200">Leave the team?</p>
+                  <p className="text-[11px] text-zinc-500">
                     This will remove your member profile. You can rejoin later.
                   </p>
                   <div className="flex gap-2">
@@ -116,7 +115,7 @@ export function TeamList() {
                       type="button"
                       onClick={handleDelete}
                       disabled={deleting}
-                      className="rounded-md bg-red-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
+                      className="rounded-md bg-red-600 px-2.5 py-1 text-[11px] font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
                     >
                       {deleting ? 'Removing...' : 'Remove'}
                     </button>
@@ -124,7 +123,7 @@ export function TeamList() {
                       type="button"
                       onClick={() => setConfirmTarget(null)}
                       disabled={deleting}
-                      className="rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 transition-colors hover:bg-zinc-800 disabled:opacity-50"
+                      className="rounded-md border border-zinc-700 bg-zinc-900 px-2.5 py-1 text-[11px] font-medium text-zinc-300 transition-colors hover:bg-zinc-800 disabled:opacity-50"
                     >
                       Cancel
                     </button>
@@ -132,17 +131,17 @@ export function TeamList() {
                 </div>
               ) : (
                 <>
-                  <p className="text-xs font-bold uppercase tracking-wide text-teal-400">
+                  <p className="text-[11px] font-bold uppercase tracking-wide text-teal-400">
                     {ROLE_LABELS[member.role] ?? member.role}
                   </p>
-                  <p className="mt-1 text-xl font-bold text-white">
+                  <p className="mt-0.5 text-base font-bold text-white">
                     {member.displayName ?? member.email}
                     {isOwn && (
-                      <span className="ml-1.5 text-sm font-normal text-zinc-500">(you)</span>
+                      <span className="ml-1 text-xs font-normal text-zinc-500">(you)</span>
                     )}
                   </p>
                   {blurb && (
-                    <p className="mt-2 break-words text-sm leading-relaxed text-zinc-400">
+                    <p className="mt-1.5 break-words text-xs leading-relaxed text-zinc-400">
                       {displayBlurb}
                     </p>
                   )}
@@ -150,13 +149,13 @@ export function TeamList() {
                     <button
                       type="button"
                       onClick={() => toggleExpanded(member.uid)}
-                      className="mt-2 text-xs font-semibold uppercase tracking-wide text-teal-400 underline underline-offset-2 hover:text-teal-300"
+                      className="mt-1.5 text-[11px] font-semibold uppercase tracking-wide text-teal-400 underline underline-offset-2 hover:text-teal-300"
                     >
                       {isExpanded ? 'Show less' : 'Read more'}
                     </button>
                   )}
                   {member.createdAt && (
-                    <p className="mt-3 text-xs text-zinc-600">
+                    <p className="mt-2 text-[11px] text-zinc-600">
                       Joined {formatDate(member.createdAt.toDate())}
                     </p>
                   )}
