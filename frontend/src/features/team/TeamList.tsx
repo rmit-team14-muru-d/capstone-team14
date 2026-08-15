@@ -17,6 +17,7 @@ const ROLE_LABELS: Record<string, string> = {
   QA: 'QA Engineer',
   UX: 'UX Designer',
   BA: 'Business Analyst',
+  UXBA: 'UX Designer & Business Analyst',
 }
 
 const BLURB_LIMIT = 140
