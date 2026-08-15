@@ -32,9 +32,9 @@ export default function TeamPage() {
       >
         <g stroke="#ffffff" strokeWidth="0.6" fill="none">
           <path d="M50 0 L50 900" />
-          <path d="M250 0 L250 900" />
+          <path d="M200 0 L200 900" />
           <path d="M400 0 L400 900" />
-          <path d="M550 0 L550 900" />
+          <path d="M600 0 L600 900" />
           <path d="M750 0 L750 900" />
         </g>
       </svg>
