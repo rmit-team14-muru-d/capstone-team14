@@ -23,8 +23,26 @@ export default function TeamPage() {
   const hasJoined = members.some((m) => m.uid === user?.uid)
 
   return (
-    <div className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto max-w-2xl px-6 py-10">
+    <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]"
+        viewBox="0 0 800 900"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <g stroke="#ffffff" strokeWidth="1" fill="none">
+          <path d="M50 0 L50 900" />
+          <path d="M150 0 L150 900" />
+          <path d="M250 0 L250 900" />
+          <path d="M350 0 L350 900" />
+          <path d="M450 0 L450 900" />
+          <path d="M550 0 L550 900" />
+          <path d="M650 0 L650 900" />
+          <path d="M750 0 L750 900" />
+        </g>
+      </svg>
+
+      <div className="relative mx-auto max-w-2xl px-6 py-10">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-black tracking-tight text-teal-400 sm:text-4xl">
             TELSTRA MURU-D
