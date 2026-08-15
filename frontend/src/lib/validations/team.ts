@@ -13,8 +13,8 @@ export const registerTeamMember = z
       .min(2, 'Name must be at least 2 characters'),
     email: z.string().email('Please enter a valid email address'),
     photoURL: z.string().url('Please enter a valid URL').optional(),
-    role: z.enum(['PM', 'DEV', 'QA', 'UX', 'BA'], {
-      errorMap: () => ({ message: 'Role must be one of PM, DEV, QA, UX, or BA' }),
+    role: z.enum(['PM', 'DEV', 'QA', 'UX', 'BA', 'UXBA'], {
+      errorMap: () => ({ message: 'Role must be one of PM, DEV, QA, UX, BA or UXBA' }),
     }),
     blurb: z.string().max(200, 'Blurb must be less than 200 characters').optional(),
 
