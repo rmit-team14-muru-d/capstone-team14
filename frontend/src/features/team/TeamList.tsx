@@ -19,6 +19,8 @@ const ROLE_LABELS: Record<string, string> = {
   BA: 'Business Analyst',
 }
 
+const BLURB_LIMIT = 140
+
 export function TeamList() {
   const teamRef = useMemo(() => getTeamMembersCollection(), [])
   const constraints = useMemo(() => [where('_schemaVersion', '==', 1)], [])
@@ -31,6 +33,7 @@ export function TeamList() {
   const { user } = useAuth()
   const [deleting, setDeleting] = useState(false)
   const [confirmTarget, setConfirmTarget] = useState<string | null>(null)
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
 
   if (loading) return <FullPageSpinner />
 
@@ -56,95 +59,110 @@ export function TeamList() {
     setConfirmTarget(null)
   }
 
+  const toggleExpanded = (uid: string) => {
+    setExpanded((prev) => ({ ...prev, [uid]: !prev[uid] }))
+  }
+
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-6 sm:grid-cols-2">
       {members.map((member) => {
         const isOwn = member.uid === user?.uid
+        const isExpanded = expanded[member.uid]
+        const blurb = member.blurb ?? ''
+        const isLong = blurb.length > BLURB_LIMIT
+        const displayBlurb = isExpanded || !isLong ? blurb : `${blurb.slice(0, BLURB_LIMIT)}…`
 
         return (
           <div
             key={member.uid}
-            className="relative rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950"
           >
-            {confirmTarget === member.uid ? (
-              <div className="flex flex-col items-center gap-3 py-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-950">
-                  <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400" />
-                </div>
-                <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                  Leave the team?
-                </p>
-                <p className="text-xs text-zinc-500">
-                  This will remove your member profile. You can rejoin later.
-                </p>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={handleDelete}
-                    disabled={deleting}
-                    className="rounded-md bg-red-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
-                  >
-                    {deleting ? 'Removing...' : 'Remove'}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setConfirmTarget(null)}
-                    disabled={deleting}
-                    className="rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition-colors hover:bg-zinc-50 disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-sm font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                    {member.photoURL ? (
-                      <img
-                        src={member.photoURL}
-                        alt={member.displayName ?? ''}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
-                    ) : (
-                      (member.displayName ?? member.email ?? '?').charAt(0).toUpperCase()
-                    )}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold">
-                      {member.displayName ?? member.email}
-                      {isOwn && (
-                        <span className="ml-1.5 text-xs font-normal text-zinc-400">(you)</span>
-                      )}
-                    </p>
-                    <p className="mt-0.5 text-xs font-medium text-zinc-500">
-                      {ROLE_LABELS[member.role] ?? member.role}
-                    </p>
-                    {member.blurb && (
-                      <p className="mt-2 break-words text-sm text-zinc-600 dark:text-zinc-400">
-                        {member.blurb}
-                      </p>
-                    )}
-                    {member.createdAt && (
-                      <p className="mt-2 text-xs text-zinc-400">
-                        Joined {formatDate(member.createdAt.toDate())}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                {isOwn && (
-                  <button
-                    type="button"
-                    onClick={() => setConfirmTarget(member.uid)}
-                    disabled={deleting}
-                    className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-red-50 hover:text-red-600 disabled:opacity-50 dark:hover:bg-red-950"
-                    aria-label="Leave team"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
-                )}
-              </>
+            {/* Photo / gradient placeholder */}
+            <div className="relative h-64 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
+              {member.photoURL && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={member.photoURL}
+                  alt={member.displayName ?? ''}
+                  className="h-full w-full object-cover"
+                />
+              )}
+            </div>
+
+            {isOwn && (
+              <button
+                type="button"
+                onClick={() => setConfirmTarget(member.uid)}
+                disabled={deleting}
+                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-md bg-black/40 text-white/80 backdrop-blur transition-colors hover:bg-red-600 hover:text-white disabled:opacity-50"
+                aria-label="Leave team"
+              >
+                <Trash2 className="h-4 w-4" />
+              </button>
             )}
+
+            <div className="p-5">
+              {confirmTarget === member.uid ? (
+                <div className="flex flex-col items-center gap-3 py-2 text-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-950">
+                    <AlertTriangle className="h-5 w-5 text-red-400" />
+                  </div>
+                  <p className="text-sm font-medium text-zinc-200">Leave the team?</p>
+                  <p className="text-xs text-zinc-500">
+                    This will remove your member profile. You can rejoin later.
+                  </p>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={handleDelete}
+                      disabled={deleting}
+                      className="rounded-md bg-red-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
+                    >
+                      {deleting ? 'Removing...' : 'Remove'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setConfirmTarget(null)}
+                      disabled={deleting}
+                      className="rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 transition-colors hover:bg-zinc-800 disabled:opacity-50"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <p className="text-xs font-bold uppercase tracking-wide text-teal-400">
+                    {ROLE_LABELS[member.role] ?? member.role}
+                  </p>
+                  <p className="mt-1 text-xl font-bold text-white">
+                    {member.displayName ?? member.email}
+                    {isOwn && (
+                      <span className="ml-1.5 text-sm font-normal text-zinc-500">(you)</span>
+                    )}
+                  </p>
+                  {blurb && (
+                    <p className="mt-2 break-words text-sm leading-relaxed text-zinc-400">
+                      {displayBlurb}
+                    </p>
+                  )}
+                  {isLong && (
+                    <button
+                      type="button"
+                      onClick={() => toggleExpanded(member.uid)}
+                      className="mt-2 text-xs font-semibold uppercase tracking-wide text-teal-400 underline underline-offset-2 hover:text-teal-300"
+                    >
+                      {isExpanded ? 'Show less' : 'Read more'}
+                    </button>
+                  )}
+                  {member.createdAt && (
+                    <p className="mt-3 text-xs text-zinc-600">
+                      Joined {formatDate(member.createdAt.toDate())}
+                    </p>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         )
       })}
