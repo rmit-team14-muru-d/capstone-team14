@@ -115,7 +115,7 @@ export default function SignInPage() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Telstra-Muru-D</h3>
-                <p className="text-sm text-zinc-500">Sign in to Team 14's teampage</p>
+                <p className="text-sm text-zinc-500">Sign in to Team 14&apos; teampage</p>
               </div>
             </div>
 

@@ -30,14 +30,11 @@ export default function TeamPage() {
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <g stroke="#ffffff" strokeWidth="1" fill="none">
+        <g stroke="#ffffff" strokeWidth="0.6" fill="none">
           <path d="M50 0 L50 900" />
-          <path d="M150 0 L150 900" />
           <path d="M250 0 L250 900" />
-          <path d="M350 0 L350 900" />
-          <path d="M450 0 L450 900" />
+          <path d="M400 0 L400 900" />
           <path d="M550 0 L550 900" />
-          <path d="M650 0 L650 900" />
           <path d="M750 0 L750 900" />
         </g>
       </svg>

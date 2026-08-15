@@ -79,6 +79,7 @@ export function TeamList() {
           >
             <div className="relative h-56 w-full bg-gradient-to-br from-cyan-400 via-teal-500 to-teal-800">
               {member.photoURL && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={member.photoURL}
                   alt={member.displayName ?? ''}
