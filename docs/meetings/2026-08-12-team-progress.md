@@ -2,23 +2,23 @@
 
 **Project:** Telstra — AI Workloads Muru-d Innovation Lab (Group 2)
 
-| | |
-|---|---|
-| **Date** | 12/08/2026 |
-| **Time** | 12:00–12:18 |
-| **Location** | Microsoft Teams |
-| **Meeting Chair** | Sean Danailoff |
-| **Minute Taker** | Sean Danailoff |
-| **Meeting No.** | 3 |
+|                   |                 |
+| ----------------- | --------------- |
+| **Date**          | 12/08/2026      |
+| **Time**          | 12:00–12:18     |
+| **Location**      | Microsoft Teams |
+| **Meeting Chair** | Sean Danailoff  |
+| **Minute Taker**  | Sean Danailoff  |
+| **Meeting No.**   | 3               |
 
 ## Attendees
 
-| Name | Role / Title | Present / Apologies |
-|---|---|---|
-| Sean Danailoff | Project Manager | Present |
-| Senglong Te | Developer 2 | Present |
-| Sahil Khan | Developer 1 | Present |
-| Ziggy Debrincat | UX / BA | Present |
+| Name            | Role / Title    | Present / Apologies |
+| --------------- | --------------- | ------------------- |
+| Sean Danailoff  | Project Manager | Present             |
+| Senglong Te     | Developer 2     | Present             |
+| Sahil Khan      | Developer 1     | Present             |
+| Ziggy Debrincat | UX / BA         | Present             |
 
 ## Meeting Objective
 
@@ -36,13 +36,13 @@ Sean confirmed his availability for ad-hoc meetings if anyone is blocked, and cl
 
 ## Action Items
 
-| # | Action | Owner | Due Date | Status |
-|---|---|---|---|---|
-| 1 | Fix team list not displaying newly registered members on first load | Senglong Te | 13/08/26 | Closed |
-| 2 | Raise pull request for requirements documentation | Ziggy Debrincat | 12/08/26 | Open |
-| 3 | Review and merge outstanding pull requests | Sean Danailoff | Ongoing | Closed |
-| 4 | Confirm developer peer-testing arrangement against assignment requirements | Sean Danailoff | 13/08/26 | Open |
-| 5 | Update `docs/FIRESTORE-SCHEMA.md` with the `team_members` collection | Senglong Te | 13/08/26 | Open |
+| #   | Action                                                                     | Owner           | Due Date | Status |
+| --- | -------------------------------------------------------------------------- | --------------- | -------- | ------ |
+| 1   | Fix team list not displaying newly registered members on first load        | Senglong Te     | 13/08/26 | Closed |
+| 2   | Raise pull request for requirements documentation                          | Ziggy Debrincat | 12/08/26 | Open   |
+| 3   | Review and merge outstanding pull requests                                 | Sean Danailoff  | Ongoing  | Closed |
+| 4   | Confirm developer peer-testing arrangement against assignment requirements | Sean Danailoff  | 13/08/26 | Open   |
+| 5   | Update `docs/FIRESTORE-SCHEMA.md` with the `team_members` collection       | Senglong Te     | 13/08/26 | Open   |
 
 ## Risks / Issues Raised
 
@@ -56,12 +56,12 @@ Sean confirmed his availability for ad-hoc meetings if anyone is blocked, and cl
 
 ## Next Meeting
 
-| | |
-|---|---|
-| **Date** | TBC |
-| **Location** | Microsoft Teams |
-| **Focus** | Assignment 1 finalisation |
+|              |                           |
+| ------------ | ------------------------- |
+| **Date**     | TBC                       |
+| **Location** | Microsoft Teams           |
+| **Focus**    | Assignment 1 finalisation |
 
 ---
 
-*Minutes prepared by: Sean Danailoff | Distribution: All attendees*
+_Minutes prepared by: Sean Danailoff | Distribution: All attendees_

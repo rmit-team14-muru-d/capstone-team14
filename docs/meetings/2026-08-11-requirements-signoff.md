@@ -2,22 +2,22 @@
 
 **Project:** Telstra — AI Workloads Muru-d Innovation Lab (Group 2)
 
-| | |
-|---|---|
-| **Date** | 11/08/2026 |
-| **Location** | Microsoft Teams |
-| **Meeting Chair** | Sean Danailoff |
-| **Minute Taker** | Sean Danailoff |
-| **Meeting No.** | 2 |
+|                   |                 |
+| ----------------- | --------------- |
+| **Date**          | 11/08/2026      |
+| **Location**      | Microsoft Teams |
+| **Meeting Chair** | Sean Danailoff  |
+| **Minute Taker**  | Sean Danailoff  |
+| **Meeting No.**   | 2               |
 
 ## Attendees
 
-| Name | Role / Title | Present / Apologies |
-|---|---|---|
-| Sean Danailoff | Project Manager | Present |
-| Ziggy Debrincat | UX / BA | Present |
-| Sahil Khan | Developer 1 | Not required |
-| Senglong Te | Developer 2 | Not required |
+| Name            | Role / Title    | Present / Apologies |
+| --------------- | --------------- | ------------------- |
+| Sean Danailoff  | Project Manager | Present             |
+| Ziggy Debrincat | UX / BA         | Present             |
+| Sahil Khan      | Developer 1     | Not required        |
+| Senglong Te     | Developer 2     | Not required        |
 
 ## Meeting Objective
 
@@ -35,15 +35,15 @@ Sean relayed Alessio's instruction from earlier in the day that each Planner car
 
 ## Action Items
 
-| # | Action | Owner | Due Date | Status |
-|---|---|---|---|---|
-| 1 | Add completion notes to Planner cards and mark finished tasks as done | Ziggy Debrincat | 11/08/26 | Closed |
-| 2 | Add team members as collaborators on the team repository | Sean Danailoff | 11/08/26 | Closed |
-| 3 | Raise requirements document as a pull request | Ziggy Debrincat | 12/08/26 | Open |
-| 4 | Review and approve requirements document pull request | Sean Danailoff | 12/08/26 | Open |
-| 5 | Brief developers to begin implementation | Sean Danailoff | 12/08/26 | Closed |
-| 6 | Decide photo sizing for team profile display | Ziggy Debrincat (UX) | TBC | Closed |
-| 7 | Create shared Firebase project and distribute configuration | Senglong Te (Dev 2) | 12/08/26 | Closed |
+| #   | Action                                                                | Owner                | Due Date | Status |
+| --- | --------------------------------------------------------------------- | -------------------- | -------- | ------ |
+| 1   | Add completion notes to Planner cards and mark finished tasks as done | Ziggy Debrincat      | 11/08/26 | Closed |
+| 2   | Add team members as collaborators on the team repository              | Sean Danailoff       | 11/08/26 | Closed |
+| 3   | Raise requirements document as a pull request                         | Ziggy Debrincat      | 12/08/26 | Open   |
+| 4   | Review and approve requirements document pull request                 | Sean Danailoff       | 12/08/26 | Open   |
+| 5   | Brief developers to begin implementation                              | Sean Danailoff       | 12/08/26 | Closed |
+| 6   | Decide photo sizing for team profile display                          | Ziggy Debrincat (UX) | TBC      | Closed |
+| 7   | Create shared Firebase project and distribute configuration           | Senglong Te (Dev 2)  | 12/08/26 | Closed |
 
 ## Risks / Issues Raised
 
@@ -57,13 +57,13 @@ Sean relayed Alessio's instruction from earlier in the day that each Planner car
 
 ## Next Meeting
 
-| | |
-|---|---|
-| **Date** | 12/08/26 |
-| **Time** | 12:00–12:30 |
-| **Location** | Microsoft Teams |
-| **Focus** | Assignment 1 Progress |
+|              |                       |
+| ------------ | --------------------- |
+| **Date**     | 12/08/26              |
+| **Time**     | 12:00–12:30           |
+| **Location** | Microsoft Teams       |
+| **Focus**    | Assignment 1 Progress |
 
 ---
 
-*Minutes prepared by: Sean Danailoff | Distribution: All attendees*
+_Minutes prepared by: Sean Danailoff | Distribution: All attendees_

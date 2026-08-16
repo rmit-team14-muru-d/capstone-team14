@@ -2,24 +2,24 @@
 
 **Project:** Telstra — AI Workloads Muru-d Innovation Lab (Group 2)
 
-| | |
-|---|---|
-| **Date** | 07/08/2026 |
-| **Time** | 13:30–14:00 |
-| **Location** | Microsoft Teams |
-| **Meeting Chair** | Alessio Bonti |
-| **Minute Taker** | Sean Danailoff |
-| **Meeting No.** | 1 |
+|                   |                 |
+| ----------------- | --------------- |
+| **Date**          | 07/08/2026      |
+| **Time**          | 13:30–14:00     |
+| **Location**      | Microsoft Teams |
+| **Meeting Chair** | Alessio Bonti   |
+| **Minute Taker**  | Sean Danailoff  |
+| **Meeting No.**   | 1               |
 
 ## Attendees
 
-| Name | Role / Title | Present / Apologies |
-|---|---|---|
-| Alessio Bonti | Client Proxy / Supervisor | Present |
-| Sean Danailoff | Project Manager | Present |
-| Sahil Khan | Developer 1 | Present |
-| Aiden Brundell | Developer 2 | Present |
-| Ziggy Debrincat | UX / BA | Present |
+| Name            | Role / Title              | Present / Apologies |
+| --------------- | ------------------------- | ------------------- |
+| Alessio Bonti   | Client Proxy / Supervisor | Present             |
+| Sean Danailoff  | Project Manager           | Present             |
+| Sahil Khan      | Developer 1               | Present             |
+| Aiden Brundell  | Developer 2               | Present             |
+| Ziggy Debrincat | UX / BA                   | Present             |
 
 ## Meeting Objective
 
@@ -33,13 +33,13 @@ The team and Alessio then discussed the engineering considerations for an LLM-ba
 
 ## Action Items
 
-| # | Action | Owner | Due Date | Status |
-|---|---|---|---|---|
-| 1 | Issue the rewritten project brief to the team | Alessio Bonti | 09/08/26 | Open |
-| 2 | Map the full workflow — all boxes from idea to prototype | All | 15/08/26 | Open |
-| 3 | Define evaluation framework for comparing models and prompts per box | Sahil Khan / Aiden Brundell | 21/08/26 | Open |
-| 4 | Set up and maintain Planner (assessed each Sunday) | Sean Danailoff | Weekly (Sun) | Open |
-| 5 | Prepare 2-minute submission video (PM only) | Sean Danailoff | 15/08/26 | Open |
+| #   | Action                                                               | Owner                       | Due Date     | Status |
+| --- | -------------------------------------------------------------------- | --------------------------- | ------------ | ------ |
+| 1   | Issue the rewritten project brief to the team                        | Alessio Bonti               | 09/08/26     | Open   |
+| 2   | Map the full workflow — all boxes from idea to prototype             | All                         | 15/08/26     | Open   |
+| 3   | Define evaluation framework for comparing models and prompts per box | Sahil Khan / Aiden Brundell | 21/08/26     | Open   |
+| 4   | Set up and maintain Planner (assessed each Sunday)                   | Sean Danailoff              | Weekly (Sun) | Open   |
+| 5   | Prepare 2-minute submission video (PM only)                          | Sean Danailoff              | 15/08/26     | Open   |
 
 ## Risks / Issues Raised
 
@@ -55,13 +55,13 @@ The team and Alessio then discussed the engineering considerations for an LLM-ba
 
 ## Next Meeting
 
-| | |
-|---|---|
-| **Date** | 12/08/26 |
-| **Time** | 12:00–12:30 |
-| **Location** | Microsoft Teams |
-| **Focus** | Assignment 1 Progress |
+|              |                       |
+| ------------ | --------------------- |
+| **Date**     | 12/08/26              |
+| **Time**     | 12:00–12:30           |
+| **Location** | Microsoft Teams       |
+| **Focus**    | Assignment 1 Progress |
 
 ---
 
-*Minutes prepared by: Sean Danailoff | Reviewed by: Aiden Brundell | Distribution: All attendees*
+_Minutes prepared by: Sean Danailoff | Reviewed by: Aiden Brundell | Distribution: All attendees_
